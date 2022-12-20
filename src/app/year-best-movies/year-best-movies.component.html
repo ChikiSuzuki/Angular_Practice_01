@@ -1,0 +1,12 @@
+<!-- <p>year-best-movies works!</p> -->
+<h2>年間ベストランキング</h2>
+<ul class="movies">
+    <li *ngFor="let movie of movies">
+        <a routerLink="/movies_detail/{{movie.name}}">
+            <button mat-flat-button color="primary" type="button">
+                <span class="ranking">{{movies.indexOf(movie) + 1}}</span>
+                <span class="name">{{movie.name}}</span>
+            </button>
+        </a>
+    </li>
+</ul>

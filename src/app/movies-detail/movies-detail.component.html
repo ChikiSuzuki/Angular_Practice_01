@@ -1,0 +1,15 @@
+<div *ngIf="movie">
+    <h2>{{movie.name | uppercase}} Details</h2>
+    <div>
+      <label for="movie-name">Movie name: {{movie.name}} </label>
+      <p>
+        <label for="comment">Comment: </label>
+        <textarea id="comment" cols="20" rows="5">
+            {{movie.comment}}
+        </textarea>
+      </p>
+    </div>
+    <button type="button" (click)="saveComment()">Save</button>
+    <button type="button" (click)="deleteMovie()">Delete</button>
+    <app-go-back></app-go-back>
+</div> 

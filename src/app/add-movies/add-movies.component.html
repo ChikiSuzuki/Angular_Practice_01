@@ -1,0 +1,25 @@
+<h2>映画を追加する</h2>
+<form [formGroup]="addMovieForm">
+  <div>
+    <label for="movie-rank-year">年間順位： </label>
+    <input id="movie-rank-year" type="number" formControlName="rankYear">
+</div>
+<div>
+  <label for="movie-rank-life">人生順位： </label>
+  <input id="movie-rank-life" type="number"  formControlName="rankLife">
+</div>
+<div>
+  <label for="movie-name">映画名: </label>
+  <input id="movie-name" type="text" (input)="onInput()"  formControlName="name">
+</div>
+<div>
+    <label for="movie-comment">コメント: </label>
+    <textarea id="movie-comment" cols="20" rows="5" formControlName="comment"></textarea>
+</div>
+<button type="button" (click)="addMovie()" [disabled]="!addMovieForm.valid">追加</button>
+
+</form>
+<app-go-back></app-go-back>
+
+<app-year-best-movies></app-year-best-movies>
+<app-life-best-movies></app-life-best-movies>
